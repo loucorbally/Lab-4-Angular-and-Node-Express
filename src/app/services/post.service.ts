@@ -11,7 +11,7 @@ export class PostService {
   constructor(private http: HttpClient) { }
   
     getPostsData(): Observable<any> {
-      return this.http.get("https://jsonblob.com/api/72c08754-bd0b-11e8-9ff5-3dcfbb284439");
+      return this.http.get("http://localhost:8081/api/posts");
     }
 
   private posts: Post[] = [];
