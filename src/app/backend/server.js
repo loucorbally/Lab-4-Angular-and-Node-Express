@@ -17,6 +17,12 @@ app.post('/name', function(req, res){
     req.body.firstname + " " +
     req.body.lastname);
 })
+app.post('/api/posts', function(req,res)
+{
+    console.log("Post successful");
+    console.log(req.body.title);
+    console.log(req.body.content)
+})
 
 app.get('/', function (req, res) {
    res.send('Hello from Express');

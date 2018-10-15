@@ -25,11 +25,14 @@ export class PostService {
   //   return this.postsUpdated.asObservable();
   // }
 
-  addPost(title: string, content: string) {
+  addPost(title: string, content: string):Observable<any> {
     const post: Post = {title: title, content: content};
-    this.posts.push(post);
-    console.log(post);
-    console.log(this.posts);
+
+    return this.http.post("http://localhost:8081/api/posts", post);
+
+    //this.posts.push(post);
+    //console.log(post);
+    //console.log(this.posts);
     //this.postsUpdated.next([...this.posts]);
   }
 
